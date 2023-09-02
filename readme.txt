@@ -1,12 +1,10 @@
 StudentID 	: 2113110387
 Name 		: Pitchakorn Vichanuwat
-Date to Study 	: 26/08+/2023
-ClassTopic 	: 1. PR Mobile Application Contest as a link: https://www.facebook.com/100094507495416/posts/pfbid0354LSgwXyzZqV5pR6DiifYJLJaL5vcLcyB2HD57cs7kfCAcH8DVXzRb8ezLtvFPRXl/?mibextid=cr9u03
+Date to Study 	: 2/09/2023
+ClassTopic 	: Lecture #9 [September 2, 2023]: Class Agenda
 
-2. using Android Emulator
+1. Take a questionnaire (from Aj.Lalita) as a link: https://forms.gle/ojZU31s3aUYmBDZp8
 
-3. using Fetch call API in Component
+2. React Navigator : Stack Navigator
 
-4. Guideline: Postman calls the API
-
-5. In-class exercise
+3. In-class exercise
