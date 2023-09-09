@@ -1,10 +1,10 @@
 StudentID 	: 2113110387
 Name 		: Pitchakorn Vichanuwat
-Date to Study 	: 2/09/2023
-ClassTopic 	: Lecture #9 [September 2, 2023]: Class Agenda
+Date to Study 	: 9/09/2023
+ClassTopic 	: Lecture #10 [September 9, 2023]: Class Agenda
 
-1. Take a questionnaire (from Aj.Lalita) as a link: https://forms.gle/ojZU31s3aUYmBDZp8
+- React Navigator : Stack Navigator with passing parameters to routes
 
-2. React Navigator : Stack Navigator
+- React Navigator : Drawer Navigator
 
-3. In-class exercise
+- In-class exercise
