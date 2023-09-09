@@ -4,10 +4,10 @@ import React from "react";
 const FirstPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>FirstPage</Text>
+      <Text style={{fontSize:20,padding:10,marginBottom:20}}>This is the first First Page of the app</Text>
       <Button
         title="Go to SecondPage"
-        onPress={() => navigation.navigate("SecondPage")}
+        onPress={() => navigation.navigate("SecondDrawer Option")}
       />
     </View>
   );

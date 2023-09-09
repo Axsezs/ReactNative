@@ -4,7 +4,7 @@ import React from "react";
 const SecondPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>Second Page</Text>
+      <Text style={{fontSize:20,padding:10}}>This is Second Page of the App</Text>
       <Text>{"\n"}</Text>
       <Button title="GO BACK" onPress={() => navigation.goBack()} />
       <Text>{"\n"}</Text>

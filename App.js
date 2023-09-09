@@ -1,32 +1,71 @@
-import { View, Text, Button } from "react-native";
+import "react-native-gesture-handler";
 import React from "react";
+import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./Screens/HomeScreen";
-import DetailsScreen from "./Screens/DetailsScreen";
-import IndexScreen from "./Screens/IndexScreen";
-import CreatePostScreen from "./Screens/CreatePostScreen";
+import FirstPage from "./pages/FirstPage";
+import SecondPage from "./pages/SecondPage";
 
+const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
+
+function FirstScreen() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#FF9990",
+        },
+        headerTintColor: "black",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
+      <Stack.Screen name="FirstPage" component={FirstPage} />
+    </Stack.Navigator>
+  );
+}
+
+function SecondScreen() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#FF9990",
+        },
+        headerTintColor: "black",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
+      <Stack.Screen name="SecondPage" component={SecondPage} />
+    </Stack.Navigator>
+  );
+}
+
+function MyDrawer() {
+  return (
+    <Drawer.Navigator
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: "#FF9990",
+          width: 240,
+        },
+      }}
+    >
+      <Drawer.Screen name="FirstDrawer" component={FirstScreen} />
+      <Drawer.Screen name="SecondDrawer Option" component={SecondScreen} />
+    </Drawer.Navigator>
+  );
+}
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        mode = 'model'
-        screenOptions={{
-          headerStyle: { backgroundColor: "#008b8b" },
-          headerTintColor: "#ffff",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-        }}
-      >
-        <Stack.Screen
-          name='Index' component={IndexScreen} options={{titile:'MainPage'}}
-        />
-        <Stack.Screen name="CreatePost" component={CreatePostScreen} />
-      </Stack.Navigator>
+      <MyDrawer />
     </NavigationContainer>
   );
 };
