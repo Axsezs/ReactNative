@@ -1,26 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import ViewBoxesWithColorAndText from './components/ViewBoxesWithColorAndText';
-import DisplayandImage from './components/DisplayandImage';
-import LotOfGreeting from './components/LotOfGreeting';
-import MyCustomTextWith from './components/MyCustomTextWith';
+import { View, Text, Button } from "react-native";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./Screens/HomeScreen";
+import DetailsScreen from "./Screens/DetailsScreen";
+import IndexScreen from "./Screens/IndexScreen";
+import CreatePostScreen from "./Screens/CreatePostScreen";
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    // <View style = {styles.container}>
-    //   {/* <ViewBoxesWithColorAndText/>
-    //   <DisplayandImage/> */}
-    // </View>
-    //<LotOfGreeting/>
-    <MyCustomTextWith/>
+    <NavigationContainer>
+      <Stack.Navigator
+        mode = 'model'
+        screenOptions={{
+          headerStyle: { backgroundColor: "#008b8b" },
+          headerTintColor: "#ffff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      >
+        <Stack.Screen
+          name='Index' component={IndexScreen} options={{titile:'MainPage'}}
+        />
+        <Stack.Screen name="CreatePost" component={CreatePostScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-  
-}
-const styles = StyleSheet.create({
-  container:{
-     flex:1,   
-     justifyContent:'center',    
-     alignItems:'center'   
-  }
- })
+};
 
+export default App;
