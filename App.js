@@ -1,71 +1,79 @@
-import "react-native-gesture-handler";
-import React from "react";
 import { View, Text } from "react-native";
+import React from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FirstPage from "./pages/FirstPage";
-import SecondPage from "./pages/SecondPage";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
-const Drawer = createDrawerNavigator();
-const Stack = createNativeStackNavigator();
-
-function FirstScreen() {
+function Feed() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#FF9990",
-        },
-        headerTintColor: "black",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-      }}
-    >
-      <Stack.Screen name="FirstPage" component={FirstPage} />
-    </Stack.Navigator>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Feed</Text>
+    </View>
+  );
+}
+function Profile() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Profile</Text>
+    </View>
   );
 }
 
-function SecondScreen() {
+function Noctification() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#FF9990",
-        },
-        headerTintColor: "black",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-      }}
-    >
-      <Stack.Screen name="SecondPage" component={SecondPage} />
-    </Stack.Navigator>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Noctification</Text>
+    </View>
   );
 }
 
-function MyDrawer() {
+const Tab = createMaterialBottomTabNavigator();
+
+function MyTabs() {
   return (
-    <Drawer.Navigator
-      screenOptions={{
-        drawerStyle: {
-          backgroundColor: "#FF9990",
-          width: 240,
-        },
-      }}
+    <Tab.Navigator
+      initialRouteName="Feed"
+      activeColor="#ffa4a4"
+      labelStyle={{ fontSize: 12 }}
+      style={{ backgroundColor: "black" }}
     >
-      <Drawer.Screen name="FirstDrawer" component={FirstScreen} />
-      <Drawer.Screen name="SecondDrawer Option" component={SecondScreen} />
-    </Drawer.Navigator>
+      <Tab.Screen
+        name="Feed"
+        component={Feed}
+        options={{
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Noctification"
+        component={Noctification}
+        options={{
+          tabBarLabel: "Noctification",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="bell" color={color} size={26} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 }
-
 const App = () => {
   return (
     <NavigationContainer>
-      <MyDrawer />
+      <MyTabs />
     </NavigationContainer>
   );
 };
